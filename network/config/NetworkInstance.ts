@@ -1,5 +1,5 @@
 const NetworkInstance = {
-  baseURL: process.env.BASE_URL,
+  baseURL: process.env.NEXT_PUBLIC_BASE_URL,
   timeout: 30000,
 };
 
