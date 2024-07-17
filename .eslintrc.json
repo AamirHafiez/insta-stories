@@ -1,6 +1,6 @@
 {
   "extends": "next/core-web-vitals",
   "rules": {
-    "eslint-disable-next-line react/display-name": false
+    "eslint-disable-next-line react/display-name": "off"
   }
 }
