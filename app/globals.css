@@ -31,3 +31,25 @@ body {
     text-wrap: balance;
   }
 }
+
+
+/* To hide scroll bars */
+@layer utilities {
+  /* Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}
+
+.img {
+  opacity: 1;
+  transition: opacity 1s;
+}
+.img--hidden {
+  opacity: 0;
+}
