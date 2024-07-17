@@ -54,3 +54,17 @@ The development (testing) branch for the project is `development`
 
 1. `main`: The code is deployed to production.
 2. `development`: The unit tests are run before the build, if they pass, the code is deployed to development.
+
+## Coding Paradigms:
+
+1. In the source code, I have implemented MVVM architecture.
+2. I have separated out data layer from the UI layer with respect to the design priciple of `separation of concerns`.
+3. I have used hooks pattern instead of legacy class patterns in the code.
+4. I have used atomic design principles to seperate out components into atoms, molecules and organisms. [Refer](https://atomicdesign.bradfrost.com/chapter-2/)
+5. I have separated out network layer from the code.
+6. Utility functions are also separated from the business logic.
+7. I have used facade design patterns to wrap components which may vary in future.
+8. I have logically distributed out components that can be used individually and with other components.
+9. I have used Provider pattern whereever necessary to separate out logical parts.
+10. I have also used HOC patterns to separate out logic that is reusable.
+11. I have used Next Js as a fullstack web app where the server and the client is coded as a monorepo.
