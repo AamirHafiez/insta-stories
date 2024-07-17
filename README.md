@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## How to start the project in development mode
 
-## Getting Started
+### Step 1:
 
-First, run the development server:
+Get the ip that your machine is working on:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+For Mac Users, use the following command:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+`ipconfig getifaddr en0`
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+This should give you something like this, `192.168.1.4`
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Step 2:
 
-## Learn More
+After cloning the project,
 
-To learn more about Next.js, take a look at the following resources:
+Create a new file called `.env.local`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Add the following in the file `.env.local`:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+`NEXT_PUBLIC_BASE_URL=http://192.168.1.4:3000`
 
-## Deploy on Vercel
+_Note that 192.168.1.4 in the above should be replaced with the ip that you got in Step 1 and port 3000 should not be changed._
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Step 3:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+To install dependencies for the project run `npm install`
+
+### Step 4:
+
+To run the project in development run `npm run dev`
+
+### Step 5:
+
+In the browser, if you open the project at `http://localhost:3000`, you will get a cors error since the server is not configured for development cors.
+
+Instead use the ip that you get in step 1 to run the app in the browser.
+
+For example if I get the ip as `192.168.1.4`,
+
+In the browser copy and paste this, `http://192.168.1.4:3000`
+
+And thus the project will run.
+
+## Deployment of the Project:
+
+The project is connected with the vercel at `https://vercel.com/new`.
+
+The production branch for the project is `main`
+
+The development (testing) branch for the project is `development`
+
+#### Everytime, code is merged with branch,
+
+1. `main`: The code is deployed to production.
+2. `development`: The unit tests are run before the build, if they pass, the code is deployed to development.
