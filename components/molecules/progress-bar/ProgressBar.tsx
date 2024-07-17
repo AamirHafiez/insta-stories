@@ -1,9 +1,7 @@
 import React, { useEffect } from "react";
 import { motion, useAnimate } from "framer-motion";
 import { ProgressBarProps } from "./types";
-
-export const delayExecution = (ms: number) =>
-  new Promise((res) => setTimeout(res, ms));
+import delayExecution from "@/utils/timers/delayExecution";
 
 const ProgressBar = (props: ProgressBarProps) => {
   const {
