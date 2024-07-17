@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { StoryImageProps } from "./types";
 import Image from "@/components/atoms/image/Image";
 
@@ -6,6 +6,10 @@ function StoryImage(props: StoryImageProps) {
   const { data } = props;
 
   const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    setIsLoading(true);
+  }, [data]);
 
   return (
     <div className="relative w-full h-full">
@@ -24,6 +28,7 @@ function StoryImage(props: StoryImageProps) {
         src={data}
         fill
         alt={data}
+        loading="eager"
         onLoad={(img) => {
           setIsLoading(false);
           img.currentTarget.classList.remove("img--hidden");
