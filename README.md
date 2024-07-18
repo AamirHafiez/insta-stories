@@ -14,7 +14,7 @@ This should give you something like this, `192.168.1.4`
 
 After cloning the project,
 
-Create a new file called `.env.local`
+Create a new file called `.env.local` in the root folder
 
 Add the following in the file `.env.local`:
 
